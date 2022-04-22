@@ -1,0 +1,145 @@
+@import 'config';
+
+body{
+    background-color: $light-gray;
+}
+
+.card{
+    min-width: 335px;
+    width: 38vw;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 1.5rem gray;
+    &-top{
+        width: 100%;
+        padding: 1rem;
+        border-radius: 1rem 1rem 0 0;
+        background-color: white;
+
+        h1{
+            color: $cyan;
+            font-size: 1.2rem;
+            padding-top: 0.2rem;
+        }
+        h2{
+            font-size: 0.9rem;
+            color: $green;
+            padding: 0.4rem 0;
+        }
+        p{
+            color: $light-blue;
+            padding: 0.2rem 0;
+        }
+    }
+    
+    &-left{
+        border-bottom-left-radius:0.5rem;
+        background-color: $cyan;
+
+        h1{
+            padding-bottom: 0.7rem;
+            color: white;
+            font-size: 1.1rem;
+        }
+        p.sub{
+            color: hsl(179, 59%, 73%);
+            display: flex;
+            align-items: center;
+            padding-bottom: 0.5rem;
+            span{
+                color: white;
+                font-size: 2rem;
+                padding-right: 0.5rem;
+            }
+        }
+
+        p.full{
+            color: white;
+            font-size: 14px;
+            padding-bottom: 1.5rem;
+        }
+
+        &__btn{
+            border: none;
+            border-radius: 0.5rem;
+            padding: 0.5rem 0;
+            
+
+            background-color: $green;
+            box-shadow: 0 0 0.5rem rgb(82, 80, 80);
+            a{
+                display: flex;
+                justify-content: center;
+                text-decoration: none;
+                font-size: 1.1rem;
+                font-weight: bold;
+                color: white;
+            }
+
+            &:hover{
+                background-color: white;
+                transition: background-color .2s linear;
+
+                a{
+                    color: $green;
+                    transition: color .2s linear;
+                }
+            }
+        }
+    }
+    &-right{
+        border-bottom-right-radius: 0.5rem;
+        background-color: hsl(179, 48%, 55%);
+
+        h1{
+            padding-bottom: 0.7rem;
+            color: white;
+        }
+        p{
+            color: $light-gray;
+            padding-bottom: 0.5rem;
+        }
+    }
+    &-right,&-left{
+            width: calc(100%/2);
+            padding: 1rem;
+        }
+
+        @media screen and (max-width:475px) {
+            .card{
+                display: grid;
+                margin: 1rem;
+        }
+        &-left,&-right{
+            width: 100%;
+        }
+
+        &-top{
+            border-radius: 1rem 1rem 0 0;
+        }
+        &-left{
+            border-radius: 0;
+        }
+        &-right{
+            border-radius: 0 0 1rem 1rem;
+        }
+        border-radius: 1rem;
+        }
+    }
+
+footer{
+    width: fit-content;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+
+    a{
+        font-size: 11px;
+    }
+}
